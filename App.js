@@ -1,15 +1,11 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet } from 'react-native'; // Sử dụng các thành phần React Native
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
+import OnBoring from './screen/onboring'; // Import tệp onboring.js
 
-import OverlayScreen from './screem/PayMain';
-
-function App() {
-  const [overlayVisible, setOverlayVisible] = useState(true); // Ban đầu đặt overlayVisible thành true để hiển thị overlay
-
+export default function App() {
   return (
     <View style={styles.container}>
-      {overlayVisible && <OverlayScreen onClose={() => setOverlayVisible(false)} />}
-      {/* Đóng overlay khi onClose được gọi */}
+      <OnBoring /> 
     </View>
   );
 }
@@ -19,8 +15,5 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    position: 'relative',
   },
 });
-
-export default App;
